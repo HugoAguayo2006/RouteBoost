@@ -1,0 +1,10 @@
+{
+  "description": "Experience real-time comparisons of autonomous courier agents with a minimalist dashboard that highlights optimized earnings and route efficiency.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

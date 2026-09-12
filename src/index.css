@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;1,14..32,400&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import 'tailwindcss';
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body, #root {
+  height: 100%;
+  overflow: hidden;
+  background: #f5f6f8;
+  color: #1a2033;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #d8dce6; border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: #bcc3d0; }
+
+/* ─── Keyframes ─── */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+@keyframes dash-flow {
+  to { stroke-dashoffset: -24; }
+}
+@keyframes float-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes pulse-ring {
+  0%   { transform: scale(1);   opacity: 0.6; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+.anim-blink      { animation: blink 1.4s ease-in-out infinite; }
+.anim-float      { animation: float-in 0.3s ease-out forwards; }
+.anim-ticker     { animation: ticker-scroll 34s linear infinite; }
+.dash-flow       { animation: dash-flow 1s linear infinite; }
+
+.scroll-pane {
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #d8dce6 transparent;
+}
+
+.map-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+/* ─── Chip / badge ─── */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 2px 7px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border: 1px solid;
+}
+.chip-green  { background: #ecfdf5; color: #059669; border-color: #a7f3d0; }
+.chip-cyan   { background: #ecfeff; color: #0891b2; border-color: #a5f3fc; }
+.chip-amber  { background: #fffbeb; color: #d97706; border-color: #fde68a; }
+.chip-red    { background: #fef2f2; color: #dc2626; border-color: #fecaca; }
+.chip-slate  { background: #f8fafc; color: #64748b; border-color: #e2e8f0; }
+.chip-blue   { background: #eff6ff; color: #2563eb; border-color: #bfdbfe; }
